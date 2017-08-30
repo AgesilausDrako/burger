@@ -6,11 +6,11 @@
 
     <div class="row">
         <ul class="col-md-4 col-md-offset-1">
-        <h2 class="text-center">Burgers to be eaten</h2>
+        <h2 class="text-center">Burgers to eat</h2>
         {{#each burgers}}
             {{#unless this.devoured}}
             <li>
-                {{this.name}}
+                {{this.id}}  {{this.burger_name}}
                 
             </li>
                 <form action="/{{this.id}}?_method=PUT" method="POST">
@@ -26,7 +26,7 @@
         {{#each burgers}}
             {{#if this.devoured}}
             <li>
-                {{this.name}}
+                {{this.id}}  {{this.burger_name}}
 
                 {{!-- <form action="/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="devoured" value="false">
@@ -42,7 +42,7 @@
             <form action="/" method="POST">
 
                 <div class="form-group">
-                    <input type="textarea" id="burger" name="name">
+                    <input type="textarea" id="burger" name="burger_name">
                 </div>
 
                 <button type="submit" class="btn btn-danger btn-lg">Submit</button>
