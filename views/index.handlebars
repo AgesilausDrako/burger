@@ -27,11 +27,6 @@
             {{#if this.devoured}}
             <li>
                 {{this.id}}  {{this.burger_name}}
-
-                {{!-- <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="devoured" value="false">
-                <button type="submit">Nothing!</button>
-                </form> --}}
             </li>
             {{/if}}
         {{/each}}
@@ -42,7 +37,7 @@
             <form action="/" method="POST">
 
                 <div class="form-group">
-                    <input type="textarea" id="burger" name="burger_name">
+                    <input type="textarea" id="burger" name="burger_name" pattern="^\w+(?:[.' ]*\w+)*$" required>
                 </div>
 
                 <button type="submit" class="btn btn-danger btn-lg">Submit</button>
