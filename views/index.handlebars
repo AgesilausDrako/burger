@@ -10,8 +10,7 @@
         {{#each burgers}}
             {{#unless this.devoured}}
             <li>
-                {{this.id}}  {{this.burger_name}}
-                
+                {{this.id}}  {{this.burger_name}}         
             </li>
                 <form action="/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="devoured" value="true">
@@ -35,11 +34,9 @@
     <div class="row">
         <div class="col-md-5 col-md-offset-3 col-sm-12">
             <form action="/" method="POST">
-
                 <div class="form-group">
                     <input type="textarea" id="burger" name="burger_name" pattern="^\w+(?:[.' ]*\w+)*$" required>
                 </div>
-
                 <button type="submit" class="btn btn-danger btn-lg">Submit</button>
             </form>
             <h4 class="text-center">Enter the burger that you would like to eat and click the "Submit" button!</h4>
